@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <form method="POST" action="/">
+        {% for random_question in random_questions %}
+        <h3>{{ random_question['main_value'] }}</h3>
+        <p>{{ random_question['story'] }}</p>
+        <input type="hidden" name="question_id" value="{{ random_question['main_value'] }}">
+        <input type="text" name="answer">
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

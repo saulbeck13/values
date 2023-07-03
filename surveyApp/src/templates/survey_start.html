@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Survey</title>
+</head>
+<body>
+    <h1>Start Survey</h1>
+
+    {% for random_question in random_questions %}
+    <div>
+        <h3>Story:</h3>
+        <p>{{ random_question['story']}}</p>
+        <form method="POST" action="/">
+            <input type="hidden" name="question_id" value="{{ random_question['main_value'] }}">
+
+            <h3>Rate the story based on the following values:</h3>
+            <p>Conservation:</p>
+            <input type="radio" id="{{ random_question['main_value'] }}_conservation_1" name="{{ random_question['main_value'] }}_conservation" value="1">
+            <label for="{{ random_question['main_value'] }}_conservation_1">1</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_conservation_2" name="{{ random_question['main_value'] }}_conservation" value="2">
+            <label for="{{ random_question['main_value'] }}_conservation_2">2</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_conservation_3" name="{{ random_question['main_value'] }}_conservation" value="3">
+            <label for="{{ random_question['main_value'] }}_conservation_3">3</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_conservation_4" name="{{ random_question['main_value'] }}_conservation" value="4">
+            <label for="{{ random_question['main_value'] }}_conservation_4">4</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_conservation_5" name="{{ random_question['main_value'] }}_conservation" value="5">
+            <label for="{{ random_question['main_value'] }}_conservation_5">5</label>
+
+            <p>Openness:</p>
+            <input type="radio" id="{{ random_question['main_value'] }}_openness_1" name="{{ random_question['main_value'] }}_openness" value="1">
+            <label for="{{ random_question['main_value'] }}_openness_1">1</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_openness_2" name="{{ random_question['main_value'] }}_openness" value="2">
+            <label for="{{ random_question['main_value'] }}_openness_2">2</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_openness_3" name="{{ random_question['main_value'] }}_openness" value="3">
+            <label for="{{ random_question['main_value'] }}_openness_3">3</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_openness_4" name="{{ random_question['main_value'] }}_openness" value="4">
+            <label for="{{ random_question['main_value'] }}_openness_4">4</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_openness_5" name="{{ random_question['main_value'] }}_openness" value="5">
+            <label for="{{ random_question['main_value'] }}_openness_5">5</label>
+
+            <p>Self transcendence</p>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_transcendence_1" name="{{ random_question['main_value'] }}_self_transcendence" value="1">
+            <label for="{{ random_question['main_value'] }}_self_transcendence_1">1</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_transcendence_2" name="{{ random_question['main_value'] }}_self_transcendence" value="2">
+            <label for="{{ random_question['main_value'] }}_self_transcendence_2">2</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_transcendence_3" name="{{ random_question['main_value'] }}_self_transcendence" value="3">
+            <label for="{{ random_question['main_value'] }}_self_transcendence_3">3</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_transcendence_4" name="{{ random_question['main_value'] }}_self_transcendence" value="4">
+            <label for="{{ random_question['main_value'] }}_self_transcendence_4">4</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_transcendence_5" name="{{ random_question['main_value'] }}_self_transcendence" value="5">
+            <label for="{{ random_question['main_value'] }}_self_transcendence_5">5</label>
+
+            <p>Self Enhancement (Seeking pleasure, wealth and esteem)</p>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_enhancement_1" name="{{ random_question['main_value'] }}_self_enhancement" value="1">
+            <label for="{{ random_question['main_value'] }}_self_enhancement_1">1</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_enhancement_2" name="{{ random_question['main_value'] }}_self_enhancement" value="2">
+            <label for="{{ random_question['main_value'] }}_self_enhancement_2">2</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_enhancement_3" name="{{ random_question['main_value'] }}_self_enhancement" value="3">
+            <label for="{{ random_question['main_value'] }}_self_enhancement_3">3</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_enhancement_4" name="{{ random_question['main_value'] }}_self_enhancement" value="4">
+            <label for="{{ random_question['main_value'] }}_self_enhancement_4">4</label>
+            <input type="radio" id="{{ random_question['main_value'] }}_self_enhancement_5" name="{{ random_question['main_value'] }}_self_enhancement" value="5">
+            <label for="{{ random_question['main_value'] }}_self_enhancement_5">5</label>
+
+
+
+
+
+
+
+
+
+            <br><br>
+            {% if not loop.last %}
+            <input type="submit" value="Next">
+            {% else %}
+            <input type="submit" value="Submit">
+            {% endif %}
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

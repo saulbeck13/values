@@ -54,6 +54,7 @@ def survey():
             return redirect(url_for('survey'))
 
         question = questions[current_question]
+        print(question) 
 
         # Render the survey page with the current question
         return render_template('survey.html', random_question=question)
@@ -69,10 +70,11 @@ def load_questions_from_csv(file_path):
     main_values = set()  # Set to store unique main values
 
     with open(file_path, 'r') as file:
-        reader = csv.DictReader(file, delimiter="\t")
+        reader = csv.DictReader(file, delimiter="@")
         for row in reader:
             questions.append(row)
             main_values.add(row['main_value'])
+            
 
     # Randomly select two questions for each main value
     selected_questions = []
@@ -80,6 +82,8 @@ def load_questions_from_csv(file_path):
         value_questions = [q for q in questions if q['main_value'] == value]
         selected = random.sample(value_questions, 1)
         selected_questions.extend(selected)
+
+    
 
     return selected_questions
 

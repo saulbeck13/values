@@ -14,7 +14,7 @@
                 <p>{{ random_question['story'] }}</p>
             </div>
 
-            <form method="POST" action="/">
+            <form method="POST" action="/survey">
                 <input type="hidden" name="question_id" value="{{ random_question['id'] }}">
 
                 <h3 class="title is-4">Rate the story based on the following values:</h3>
